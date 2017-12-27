@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Incorrect Approach</h3>
+<div id="ianswer">
+
+
+</div>
+
+<h3>Correct Approach</h3>
+<div id="canswer">
+
+
+</div>
+
+</body>
+<script>
+    var incorrect_approach_element = document.getElementById("ianswer");
+    var correct_approach_element = document.getElementById("canswer");
+
+    for (var i=1; i<=5; ++i) {
+        setTimeout(() =>{
+            console.log(i);
+            incorrect_approach_element.innerHTML += "<p>"+i+"</p></br>";
+        }, 1000);
+    }
+
+    /*correct approach*/
+  runSetTimeout(1);
+    function runSetTimeout(q){
+
+        setTimeout(() =>
+        {if(q <= 5) {
+                    console.log(q);
+            correct_approach_element.innerHTML += "<p>"+q+"</p></br>";
+                    q++;
+            return runSetTimeout(q);
+                }}, 1000);
+
+    }
+</script>
+</html>
